@@ -17,4 +17,4 @@
 
 ### Edit config.json to include the ```userId``` of the Twitter User you want to monitor -> This is required for the program to work. You can find the Twitter User's ID by going to https://tweeterid.com/.
 
-#Have fun!
+# Have fun!
