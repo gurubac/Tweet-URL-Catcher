@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.23.0",
+    "chalk": "^4.1.2",
     "dotenv": "^10.0.0",
+    "log-timestamp": "^0.3.0",
     "signale": "^1.4.0",
     "twit": "^2.2.11"
   }

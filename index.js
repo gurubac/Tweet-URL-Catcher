@@ -1,8 +1,11 @@
 //require Twit instance
 const T = require('./tweet')
 
-//require signale logging
-const signale = require('signale');
+//require log-timestamp
+require('log-timestamp')(function() { return chalk.magenta("[" + new Date().toLocaleTimeString() + "]") });
+
+//require chalk
+const chalk = require('chalk');
 
 //require config
 const config = require('./config');
@@ -17,9 +20,10 @@ let stream = T.stream('statuses/filter', { follow: userId });
 
 //stream event that detects when a tweet is posted by userId, then checks if it contains a url
 stream.on('tweet', (tweet) => {
-    url = tweet.text.match(/\bhttps?:\/\/\S+/gi);
-    if (url !== null) {
+    let urlObj = tweet.entities.urls[0].expanded_url;
+    url = urlObj.toString();
+    if (url !== null && url !== undefined) {
         //if url is found, log it to the console
-        signale.success("Found URL: " + url[0]);
+        console.log(chalk.green("Found URL: ") + chalk.cyan(url));
     }
 });
