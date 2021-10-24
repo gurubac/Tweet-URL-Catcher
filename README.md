@@ -1,5 +1,5 @@
 # Tweet-URL-Catcher
-### Monitors a Twitter user and catches URLs from their tweets
+### Twitter monitor that watches a Twitter user and catches URLs from their tweets using Twitter Stream API
 
 ## Setup
 
